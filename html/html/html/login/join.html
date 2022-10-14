@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>회원가입 입력</title>
+        <link rel="stylesheet" href="../../assets/css/header.css" />
+        <link rel="stylesheet" href="../../assets/css/join.css" />
+        <link rel="stylesheet" href="../../assets/css/reset.css" />
+        <style>
+            @import url("https://webfontworld.github.io/gmarket/GmarketSans.css");
+        </style>
+    </head>
+
+    <body>
+        <div class="login__popup">
+            <div class="login__wrap">
+                <div class="login__inner">
+                    <div class="header__wrap">
+                        <div class="login__contents">
+                            <div class="login__box">
+                                <form name="회원가입" action="메인페이지">
+                                    <fieldset>
+                                        <h2>IT.<em>D</em></h2>
+                                        <span>Create an account 📌</span>
+                                        <legend>회원가입 입력 폼</legend>
+                                        <div class="overlay">
+                                            <div class="input__alert">
+                                                <p class="input__title">ID</p>
+                                                <p class="msg" id="youidComment">*아이디가 존재합니다.</p>
+                                            </div>
+                                            <label for="youID">ID</label>
+                                            <div class="input__error">
+                                                <input type="id" name="youID" id="youID" placeholder="아이디를 입력해주세요." class="input__style1" required />
+                                                <a href="#c" class="check" onclick="nickChecking()">중복검사</a>
+                                            </div>
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="input__alert">
+                                                <p class="input__title">NickName</p>
+                                                <p class="msg" id="youNameComment">*이름은 한글로만 작성해 주세요</p>
+                                            </div>
+                                            <label for="NickName">NickName</label>
+                                            <div class="input__error">
+                                                <input type="name" name="youName" id="youName" placeholder="성함을 입력해주세요." class="input__style2" required />
+                                                <a href="#c" class="check" onclick="nickChecking()">중복검사</a>
+                                            </div>
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="input__alert">
+                                                <p class="input__title">E-MAIL</p>
+                                                <p class="msg" id="youEmailComment">*이메일이 존재합니다.</p>
+                                            </div>
+                                            <label for="youEmail">이메일</label>
+                                            <div class="input__error">
+                                                <input type="eamil" name="youEmail" id="youEmail" placeholder="이메일을 입력해주세요." class="input__style3" required />
+                                                <a href="#c" class="check" onclick="nickChecking()">중복검사</a>
+                                            </div>
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="input__alert">
+                                                <p class="input__title">PASSWORD</p>
+                                                <p class="msg" id="youPassComment">*비밀번호가 일치하지 않습니다.</p>
+                                            </div>
+                                            <label for="youPass">비밀번호</label>
+                                            <input type="password" name="youPass" id="youPass" placeholder="비밀번호를 입력해주세요." class="input__style4" required />
+                                        </div>
+                                        <div class="overlay">
+                                            <div class="input__alert">
+                                                <p class="input__title">PASSWORD CHECK</p>
+                                                <p class="msg" id="youPassCComment">*비밀번호를 다시 확인해주세요</p>
+                                            </div>
+                                            <label for="youPassC">비밀번호 확인</label>
+                                            <input type="password" name="youPassC" id="youPassC" placeholder="비밀번호를 다시한번 입력해주세요." class="input__style5" required />
+                                        </div>
+                                        <button type="submit" class="input__button">계정 생성</button>
+                                        <button type="submit" class="join__button">이전 페이지로 돌아가기</button>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
