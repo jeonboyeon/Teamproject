@@ -1,4 +1,4 @@
-        <footer id="footer">
+<footer id="footer">
             <div class="footer_inner">
                 <div class="footer_wrap">
                     <h2><em>IT.D</em> | Free Image Download Site</h2>
@@ -47,3 +47,4 @@
                 </div>
             </div>
         </footer>
+        <!-- // footer -->

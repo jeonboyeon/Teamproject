@@ -2,7 +2,7 @@
 include "../connect/connect.php";
 include "../connect/session.php";
 if( isset($_SESSION['userMemberID']) ){ 
-    echo "<script>location.href = '../main/main.php';</script>";
+    echo "<script>window.alert('잘못된접근입니다.'); location.href = '../main/main.php';</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -74,7 +74,7 @@ if( isset($_SESSION['userMemberID']) ){
                 $("#youIdComment").text("ID을 입력해주세요!");
                 return false;
             }
-            
+            //아이디 유효성 검사
             let getyouId = RegExp(/^[a-zA-Z0-9]+/);
             if(!getyouId.test($("#youId").val())){
                 $("#youIdComment").text("ID 형식에 맞게 작성해주세요!");
@@ -138,9 +138,6 @@ if( isset($_SESSION['userMemberID']) ){
                    echo "<script>document.querySelector('.erro').innerText = '에러발생 - 관리자에게 문의하세요!'</script>"; 
                }
             }
-        
-       
-    
     ?>
 
 </body>

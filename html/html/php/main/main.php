@@ -15,16 +15,6 @@ include "../connect/session.php";
         <link rel="stylesheet" href="/assets/css/fonts.css" />
         <link rel="stylesheet" href="/assets/css/reset.css" />
         <link rel="stylesheet" href="/assets/css/main.css" />
-
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $(".btn-sidebar").click(function () {
-                    $(".sidebar").toggleClass("active");
-                    $(".btn-sidebar").toggleClass("toggle");
-                });
-            });
-        </script>
     </head>
     <body>
         <?php include "../include/header.php" ?>
@@ -33,10 +23,26 @@ include "../connect/session.php";
             <div class="main_wrap">
                 <div class="main_inner">
                     <section class="main_banner">
-                        <div class="banner_inner">
-                            <div class="banner"></div>
+                        <div class="banner_inner container">
+                            <div class="banner">
+                                <div class="banner__text">
+                                    안녕하세요!<br />
+                                    <em>IT.D</em> 사이트에 오신 것을 환영합니다.
+                                    <p>
+                                        어떤 문구를 써야할지 잘 모르겠어요.<br />
+                                        문구를 잘쓸 수 있는 팀원이 있다면 이 공간을 채워주시길 바랍니다.<br />
+                                        문구 쓰기 너무 힘드네요.
+                                    </p>
+                                </div>
+                                <div class="banner__bg">
+                                    <figure>
+                                        <img src="/assets/image/banner_bg01.png" alt="배너 이미지" />
+                                    </figure>
+                                </div>
+                            </div>
                         </div>
                     </section>
+
                     <section class="main_card container">
                         <article class="main_cardBox">
                             <div class="main_image">
@@ -420,28 +426,6 @@ include "../connect/session.php";
                 });
             });
         </script>
-        <script>
-            $(document).ready(function () {
-                $("#search").focus(function () {
-                    $(".search-box").addClass("border-searching");
-                    $(".search-icon").addClass("si-rotate");
-                });
-                $("#search").blur(function () {
-                    $(".search-box").removeClass("border-searching");
-                    $(".search-icon").removeClass("si-rotate");
-                });
-                $("#search").keyup(function () {
-                    if ($(this).val().length > 0) {
-                        $(".go-icon").addClass("go-in");
-                    } else {
-                        $(".go-icon").removeClass("go-in");
-                    }
-                });
-                $(".go-icon").click(function () {
-                    $(".search-form").submit();
-                });
-            });
-        </script>
-        <!-- 스크립트 -->
+       
     </body>
 </html>

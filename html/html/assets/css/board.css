@@ -200,7 +200,7 @@ body {
 }
 
 .board_first {
-    background-image: url(../image/button_first.svg);
+    background-image: url(../img/button_first.svg);
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
@@ -208,7 +208,7 @@ body {
     bottom: -8px;
 }
 .board_prev {
-    background-image: url(../image/button_prev.svg);
+    background-image: url(../img/button_prev.svg);
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
@@ -216,7 +216,7 @@ body {
     bottom: -8px;
 }
 .board_next {
-    background-image: url(../image/button_next.svg);
+    background-image: url(../img/button_next.svg);
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
@@ -224,7 +224,7 @@ body {
     bottom: -8px;
 }
 .board_last {
-    background-image: url(../image/button_last.svg);
+    background-image: url(../img/button_last.svg);
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;

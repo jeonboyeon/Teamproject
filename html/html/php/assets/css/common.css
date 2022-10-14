@@ -1,5 +1,5 @@
 * {
-    font-family: "GmarketSans";
+    font-family: 'GmarketSans';
 }
 #main {
     margin-bottom: 30px;
@@ -12,6 +12,12 @@
 
 /* header */
 #header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 999;
 }
 #header .header_wrap {
 }
@@ -94,7 +100,7 @@
     position: absolute;
     top: 0px;
     right: -24px;
-    content: "";
+    content: '';
     width: 1px;
     height: 20px;
     background-color: #dcdcdc;
@@ -149,15 +155,15 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    content: "";
+    content: '';
     width: 16px;
     height: 16px;
-    background-image: url("../image/header_search_ico01.svg");
+    background-image: url('../image/header_search_ico01.svg');
     background-repeat: no-repeat;
     z-index: 1;
 }
 .header__search input {
-    font-family: "GmarketSans";
+    font-family: 'GmarketSans';
     color: #555;
     width: -webkit-fill-available;
     padding: 10px 10px 10px 30px;
@@ -200,7 +206,7 @@
         top: 60px;
         right: 0;
         padding: 20px 20px 10px 20px;
-        background-color: rgba();
+        background-color: #fff;
         z-index: 100;
         border: 1px solid #dcdcdc;
     }

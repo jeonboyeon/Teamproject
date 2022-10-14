@@ -7,58 +7,61 @@
         <title>공지사항 작성 페이지</title>
 
         <!-- CSS Link -->
-        <link rel="stylesheet" href="../../assets/css/common.css" />
-        <link rel="stylesheet" href="../../assets/css/reset.css" />
-        <link rel="stylesheet" href="../../assets/css/fonts.css" />
-        <link rel="stylesheet" href="../../assets/css/board.css" />
-
-        <!-- jquery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="../assets/css/common.css" />
+        <link rel="stylesheet" href="../assets/css/reset.css" />
+        <link rel="stylesheet" href="../assets/css/fonts.css" />
+        <link rel="stylesheet" href="../assets/css/board.css" />
     </head>
     <body>
         <header id="header">
-            <div class="header__wrap">
-                <div class="header__inner">
-                    <!-- ham -->
-                    <div class="toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+            <div class="header_inner">
+                <div class="header_wrap">
+                    <div class="header_left">
+                        <h1 class="header_logo">
+                            <a href="#">IT.<em>D</em></a>
+                        </h1>
+                        <!-- //header_logo -->
+                        <!-- ham -->
+                        <svg class="ham hamRotate ham1" viewBox="0 0 100 100" width="50" onclick="this.classList.toggle('active')">
+                            <path
+                                class="line top"
+                                d="m 30,33 h 40 c 0,0 9.044436,-0.654587 9.044436,-8.508902 0,-7.854315 -8.024349,-11.958003 -14.89975,-10.85914 -6.875401,1.098863 -13.637059,4.171617 -13.637059,16.368042 v 40"
+                            />
+                            <path class="line middle" d="m 30,50 h 40" />
+                            <path
+                                class="line bottom"
+                                d="m 30,67 h 40 c 12.796276,0 15.357889,-11.717785 15.357889,-26.851538 0,-15.133752 -4.786586,-27.274118 -16.667516,-27.274118 -11.88093,0 -18.499247,6.994427 -18.435284,17.125656 l 0.252538,40"
+                            />
+                        </svg>
+                        <!-- //ham -->
+                        <nav class="header_nav">
+                            <ul>
+                                <li class="active"><a href="#">즐겨찾기</a></li>
+                                <li><a href="#">카테고리</a></li>
+                                <li><a href="#">배경화면</a></li>
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">피드백</a></li>
+                            </ul>
+                        </nav>
+                        <!-- //header_nav -->
                     </div>
-
-                    <!-- header__top -->
-                    <div class="header__top">
-                        <div class="headerTop__inner container">
-                            <!-- logo -->
-                            <div class="logo">
-                                <h1>
-                                    <a href="#c">IT.<em>D</em></a>
-                                </h1>
-                            </div>
-
-                            <!-- nav -->
-                            <nav class="header__nav">
-                                <ul>
-                                    <li class="active"><a href="#c">Bookmark</a></li>
-                                    <li><a href="#c">Category</a></li>
-                                    <li><a href="#c">Wallpaper</a></li>
-                                    <li><a href="#c">Notice</a></li>
-                                    <li><a href="#c">Feedback</a></li>
-                                </ul>
-                            </nav>
-
-                            <a href="#c">Log In</a>
-                        </div>
-                    </div>
-                    <!-- //header__top -->
-                    <div class="header__bottom">
-                        <div class="headerBottom__inner container">
-                            <div class="header__search">
+                    <!-- //header_left -->
+                    <div class="header_right">
+                        <div class="search_inner">
+                            <div class="search_box">
                                 <input type="text" placeholder="검색어를 입력해주세요." />
+                                <button type="button" class="ir">검색</button>
                             </div>
-                            <button>검색</button>
                         </div>
+                        <!-- //search_inner -->
+                        <div class="loginBtn_inner">
+                            <div class="loginBtn_box">
+                                <button type="button">로그인</button>
+                            </div>
+                        </div>
+                        <!-- //login_inner -->
                     </div>
+                    <!-- //header_right -->
                 </div>
             </div>
         </header>
@@ -154,17 +157,16 @@
         </footer>
         <!-- // footer -->
 
-        <!-- ham -->
         <script>
-            $('.toggle').click(function () {
-                $(this).toggleClass('active');
-            });
-
-            const hamBtn = document.querySelector('.toggle');
-            const nav = document.querySelector('.headerTop__inner nav');
-
-            hamBtn.addEventListener('click', () => {
-                nav.classList.toggle('show');
+            const ham = document.querySelector(".ham");
+            // console.log(ham); clg 확인 완료
+            const nav = document.querySelector(".header_nav");
+            // console.log(nav); clg 확인 완료
+            const searchInput = document.querySelector(".search_box input");
+            // console.log(searchInput); clg 확인 완료
+            ham.addEventListener("click", () => {
+                nav.classList.toggle("show");
+                searchInput.classList.toggle("show");
             });
         </script>
     </body>

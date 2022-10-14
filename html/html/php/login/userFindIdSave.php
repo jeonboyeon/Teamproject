@@ -2,7 +2,7 @@
 include "../connect/connect.php";
 include "../connect/session.php";
 if( isset($_SESSION['userMemberID']) ){ 
-    echo "<script>location.href = '../main/main.php';</script>";
+    echo "<script>window.alert('잘못된접근입니다.'); location.href = '../main/main.php';</script>";
     }
 ?>
 <!DOCTYPE html>
@@ -30,14 +30,15 @@ if( isset($_SESSION['userMemberID']) ){
                             $userEmail = $connect -> real_escape_string(trim($userEmail));
                             $sql = "SELECT userId, userEmail FROM userMember WHERE userEmail ='$userEmail'";
                             $result = $connect -> query($sql);
-                            if($result){
+                            $rowNum = $result -> num_rows;
+                            $row = mysqli_fetch_array($result);
+                            if($rowNum == 1){
                                 echo " <div class='login_Box'>
                                 <figure>
                                     <img src='/assets/image/Congratulations_bg.png' alt='회원가입 축하 이미지' />
                                 </figure>
-                                <p>메일을 전송했습니다.</p>
+                                <p>찾으시는 아이디는 : ".$row[0]." 입니다.</p>
                                 <span>
-                                    $userEmail 에 메일을 보냈습니다. <br />
                                     저희 IT.D 사이트는 <br />
                                     다양한 이미지 다운로드 기능을 무료로 제공해드리고 있습니다. <br />
                                     외에도 앞으로 다양한 기능이 추가되고 이벤트도 있으니 <br />
@@ -52,7 +53,7 @@ if( isset($_SESSION['userMemberID']) ){
                                 </figure>
                                 <p>에러 발생</p>
                                 <span>
-                                    에러가 발생되었습니다.
+                                     $userEmail 메일로 등록된 된 아이디 값이 없습니다.
                                 </span>
                                 <button type='button'>메인으로 이동하기</button>
                             </div>";
@@ -80,5 +81,13 @@ if( isset($_SESSION['userMemberID']) ){
         <!-- main -->
         <?php include "../include/footer.php" ?>
         <!-- footer -->
+        <script>
+            window.onload = function(){
+                document.querySelector(".login_Box button").addEventListener("click", () => {
+                    location.href = '../main/main.php';
+                        
+                    });
+            }
+        </script>
     </body>
 </html>

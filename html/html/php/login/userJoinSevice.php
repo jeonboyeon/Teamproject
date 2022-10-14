@@ -3,7 +3,7 @@
 include "../connect/connect.php";
 include "../connect/session.php";
 if( isset($_SESSION['userMemberID']) ){ 
-    echo "<script>location.href = '../main/main.php';</script>";
+    echo "<script>window.alert('잘못된접근입니다.'); location.href = '../main/main.php';</script>";
     }
 ?>
 <html lang="ko">

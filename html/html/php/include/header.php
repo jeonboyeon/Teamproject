@@ -1,4 +1,8 @@
-        <header id="header">
+<?php
+include "../connect/connect.php";
+include "../connect/session.php";
+?>
+<header id="header">
             <div class="header__wrap">
                 <div class="header__inner">
                     <!-- ham -->
@@ -14,7 +18,7 @@
                             <!-- logo -->
                             <div class="logo">
                                 <h1>
-                                    <a href="#c">IT.<em>D</em></a>
+                                    <a href="../main/main.php">IT.<em>D</em></a>
                                 </h1>
                             </div>
 
@@ -29,11 +33,10 @@
                                 </ul>
                             </nav>
                                 <?php if( isset($_SESSION['userMemberID']) ){ ?>
-                                    <a href='../login/logout.php'>LogOut</a>
+                                    <a href='../login/logout.php'>Log Out</a>
                                 <?php } else { ?>
-                                    <a href='../login/userLogin.php'>LogIn</a>
+                                    <a href='../login/userLogin.php'>Log In</a>
                                 <?php } ?>
-                            
                         </div>
                     </div>
                     <!-- //header__top -->
@@ -48,9 +51,8 @@
                 </div>
             </div>
         </header>
-
-        <!-- jquery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+         <!-- jquery -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <!-- ham -->
         <script>
             $('.toggle').click(function () {

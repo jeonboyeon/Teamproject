@@ -33,7 +33,7 @@
     margin-right: 100px;
 }
 .header_wrap .header_left .header_logo a em {
-    color: #388fc0;
+    color: #388FC0;
 }
 /* --header_nav(헤더 메뉴)-- */
 .header_wrap .header_left .header_nav {
@@ -52,7 +52,7 @@
 }
 .header_wrap .header_left .header_nav ul li a:hover {
     padding-bottom: 5px;
-    border-bottom: 2px solid #388fc0;
+    border-bottom: 2px solid #388FC0;
 }
 /* header_right */
 .header_wrap .header_right {
@@ -65,32 +65,32 @@
 }
 /* --검색어 입력 박스-- */
 .header_wrap .header_right .search_box input {
-    font-family: "GmarketSans";
+    font-family: 'GmarketSans';
     color: #666;
     border: 0;
     width: 300px;
     height: 36px;
-    border: 2px solid #388fc0;
+    border: 2px solid #388FC0;
     border-radius: 50px;
     box-sizing: border-box;
     padding: 6px 10px;
 }
 .header_wrap .header_right .search_box input::placeholder {
-    color: #acacac;
+    color: #ACACAC;
 }
 .header_wrap .header_right .loginBtn_box {
     margin-left: 30px;
 }
 /* --로그인 버튼-- */
 .header_wrap .header_right .loginBtn_box button {
-    font-family: "GmarketSans";
+    font-family: 'GmarketSans';
     cursor: pointer;
     font-size: 15px;
-    color: #388fc0;
+    color: #388FC0;
     box-sizing: border-box;
     width: 80px;
     height: 35px;
-    border: 2px solid #388fc0;
+    border: 2px solid #388FC0;
     background-color: #fff;
     padding: 8px 15px;
     border-radius: 50px;
@@ -98,7 +98,7 @@
 }
 .header_wrap .header_right .loginBtn_box button:hover {
     color: #fff;
-    background-color: #388fc0;
+    background-color: #388FC0;
 }
 /* --ham-- */
 .ham {
@@ -120,7 +120,7 @@
 .line {
     fill: none;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: #388fc0;
+    stroke: #388FC0;
     stroke-width: 5.5;
     stroke-linecap: round;
 }
@@ -153,7 +153,7 @@
         flex-wrap: wrap;
     }
     .header_wrap .header_left .header_nav.show::before {
-        content: "";
+        content: '';
         width: 1500px;
         height: 130px;
         position: absolute;
@@ -225,7 +225,7 @@
         flex-wrap: wrap;
     }
     .header_wrap .header_left .header_nav.show::before {
-        content: "";
+        content: '';
         width: 1000px;
         height: 120px;
         position: absolute;

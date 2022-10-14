@@ -23,7 +23,7 @@
 }
 
 .login__box h2 em {
-    color: #388fc0;
+    color: #388FC0;
 }
 
 .login__box span {
@@ -64,6 +64,7 @@
     line-height: 12px;
     color: #888888;
     margin-bottom: 6px;
+
 }
 
 .login__box .input__style1 {
@@ -84,7 +85,7 @@
 
 .login__box .join__info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between
 }
 
 .login__box .join__info .join__desc {
@@ -94,7 +95,7 @@
     line-height: 140%;
     display: inline-block;
     text-align: right;
-    color: #195eb1;
+    color: #195EB1;
     margin-bottom: 10px;
     padding-left: 10px;
 }
@@ -106,7 +107,7 @@
     font-weight: 300;
     font-size: 15px;
     line-height: 140%;
-    background: linear-gradient(180deg, #388fc0 0%, #195eb1 100%);
+    background: linear-gradient(180deg, #388FC0 0%, #195EB1 100%);
     color: #fff;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -117,7 +118,7 @@
     height: 45px;
     display: block;
     background: #fff;
-    color: #3f72af;
+    color: #3F72AF;
     font-weight: 400;
     font-size: 15px;
     line-height: 140%;
@@ -129,10 +130,10 @@
     margin-right: 5 px;
 }
 
-.login__box > p {
-    font-size: 12px;
-    line-height: 140%;
-    color: #195eb1;
+.login__box>p {
+    Font-size: 12px;
+    Line-height: 140%;
+    color: #195EB1;
 }
 
 .login__box a {
@@ -142,8 +143,9 @@
     font-size: 12px;
     line-height: 140%;
     margin-bottom: 10px;
-    color: #195eb1;
+    color: #195EB1;
 }
+
 
 label {
     position: absolute;
@@ -155,12 +157,10 @@ label {
 }
 
 /* 노트북 */
-@media (max-width: 1220px) {
-}
+@media (max-width: 1220px) {}
 
 /* 태블릿 */
-@media (max-width: 748px) {
-}
+@media (max-width: 748px) {}
 
 /* 모바일 */
 @media (max-width: 480px) {
@@ -170,4 +170,5 @@ label {
     .login__inner {
         width: 96%;
     }
+
 }

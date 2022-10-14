@@ -21,7 +21,7 @@
 .effect2:after {
     z-index: -1;
     position: absolute;
-    content: "";
+    content: '';
     bottom: 15px;
     left: 10px;
     width: 50%;
@@ -57,12 +57,12 @@
     }
 }
 @media (max-width: 748px) {
-    .main_wrap h1 {
-        font-size: 20px;
-    }
+	.main_wrap h1 {
+		font-size: 20px;
+	}
 }
 @media (max-width: 480px) {
-    .main_wrap h1 {
-        font-size: 16px;
-    }
+	.main_wrap h1 {
+		font-size: 16px;
+	}
 }
