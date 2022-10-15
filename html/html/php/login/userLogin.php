@@ -125,9 +125,6 @@ if( isset($_SESSION['userMemberID']) ){
                        $_SESSION['userMemberID'] = $info['userMemberID'];
                        $_SESSION['userId'] = $info['userID'];
                        $_SESSION['userName'] = $info['userName'];
-                       // echo "<pre>";
-                       // var_dump($info);
-                       // echo "</pre>";
                        echo "<script>location.href = '../main/main.php';</script>";
 
                    } else {

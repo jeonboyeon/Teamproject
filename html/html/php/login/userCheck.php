@@ -3,7 +3,7 @@
     // 변수 설정
     $type = $_POST['type'];
     $sql = "SELECT * FROM userMember ";
-    if($type == "emailCheck"){
+    if($type == "Check"){
         $userEmail = $connect -> real_escape_string(trim($_POST['userEmail']));
         $userId = $connect -> real_escape_string(trim($_POST['userId']));
         $sql .= "WHERE userEmail = '{$userEmail}' AND userId = '{$userId}'";

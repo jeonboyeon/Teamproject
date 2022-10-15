@@ -1,9 +1,12 @@
 <?php
 include "../connect/connect.php";
 include "../connect/session.php";
-if( isset($_SESSION['userMemberID']) ){ 
-    echo "<script>window.alert('잘못된접근입니다.'); location.href = '../main/main.php';</script>";
-    }
+$prevPage = parse_url($_SERVER['HTTP_REFERER'], PHP_URL_PATH);
+if($prevPage == '/php/login/userFindPw.php' || $prevPage == '/php/login/userFindPwSave.php'){
+}else {
+    echo "<script>alert('허용되지 않는 잘못된 접근입니다.'); location.href = '../main/main.php'; </script>";
+    return;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ko">
@@ -25,7 +28,7 @@ if( isset($_SESSION['userMemberID']) ){
                 <div class="login__wrap">
                     <div class="login__inner">
                         <div class="login__box container">
-                            <form name="로그인" action="메인페이지">
+                            <form name="changePw" name="login" method="post">
                                 <fieldset>
                                     <h2>IT.<em>D</em></h2>
                                     <span>Change Password 🔍</span>
@@ -65,75 +68,80 @@ if( isset($_SESSION['userMemberID']) ){
         <!-- main -->
         <?php include "../include/footer.php" ?>
         <!-- footer -->
-        <script>
-             
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <?php
+                 $userID = $_POST['youId'];
+                 $userEmail = $_POST['youEmail'];
+                 $userID = $connect -> real_escape_string(trim($userID));
+                 $userEmail = $connect -> real_escape_string(trim($userEmail));;
+                 echo   "<script> 
+                            document.querySelector('form').addEventListener('submit', (event) => {
+                               event.preventDefault()
+                               findChecks();
+                            });
+                             function findChecks(){
+                                //비밀번호 공백 검사
+                                if($('#NewPass').val() == ''){
+                                    $('#youPassComment').text('비밀번호를 입력해주세요!');
+                                    return false;
+                                }
+                            
+                                //비밀번호 유효성 검사
+                                let getYouPass = $('#NewPass').val();
+                                let getYouPassNum = getYouPass.search(/[0-9]/g);
+                                let getYouPassEng = getYouPass.search(/[a-z]/ig);
+                                let getYouPassSpe = getYouPass.search(/[`~!@@#$%^&*|₩₩₩'₩';:₩/?]/gi);
+                                if(getYouPass.length < 8 || getYouPass.length > 20){
+                                    $('#youPassComment').text('8자리 ~ 20자리 이내로 입력해주세요!');
+                                    return false;
+                                } else if(getYouPass.search(/\s/) != -1){
+                                    $('#youPassComment').text('비밀번호는 공백없이 입력해주세요!');
+                                    return false;
+                                } else if(getYouPassNum < 0 || getYouPassEng < 0 || getYouPassSpe < 0){
+                                    $('#youPassComment').text('영문, 숫자, 특수문자를 혼합하여 입력해주세요!');
+                                    return false;
+                                }
+                            
+                                //확인 비밀번호 공백 검사
+                                if($('#PassC').val() == ''){
+                                    $('#youPassCComment').text('확인 비밀번호를 입력해주세요!');
+                                    return false;
+                                }
+                            
+                                //비밀번호 동일한지 체크
 
-        </script>
-        <?php
-                echo "<script>
-                        document.querySelector('form').addEventListener('submit', (event) => {
-                            event.preventDefault()
-                            findChecks();
-                        });
-                        function findChecks(){
-                        //비밀번호 공백 검사
-                        if($('#NewPass').val() == ''){
-                            $('#youPassComment').text('비밀번호를 입력해주세요!');
-                            return false;
-                        }
+                                if($('#NewPass').val() !== $('#PassC').val()){
+                                    $('#youPassCComment').text('비밀번호가 동일하지않습니다!');
+                                    return false;
+                                }
+                                if($('#NewPass').val() == $('#PassC').val()){
+                                    post_to_url('userFindPwChage.php', {'youEmail': '${userEmail}', 'youId': '${userID}', 'NewPass': $('#NewPass').val()});
 
-                        //비밀번호 유효성 검사
-                        let getYouPass = $('#NewPass').val();
-                        let getYouPassNum = getYouPass.search(/[0-9]/g);
-                        let getYouPassEng = getYouPass.search(/[a-z]/ig);
-                        let getYouPassSpe = getYouPass.search(/[`~!@@#$%^&*|₩₩₩'₩';:₩/?]/gi);
-                        if(getYouPass.length < 8 || getYouPass.length > 20){
-                            $('#youPassComment').text('8자리 ~ 20자리 이내로 입력해주세요!');
-                            return false;
-                        } else if(getYouPass.search(/\s/) != -1){
-                            $('#youPassComment').text('비밀번호는 공백없이 입력해주세요!');
-                            return false;
-                        } else if(getYouPassNum < 0 || getYouPassEng < 0 || getYouPassSpe < 0){
-                            $('#youPassComment').text('영문, 숫자, 특수문자를 혼합하여 입력해주세요!');
-                            return false;
-                        }
+                                }
+                                
+                            }
+          
+                            document.querySelector('.join__button').addEventListener('click', () => {
+                                        history.back();
+                            });
+                       
 
-                        //확인 비밀번호 공백 검사
-                        if($('#PassC').val() == ''){
-                            $('#youPassCComment').text('확인 비밀번호를 입력해주세요!');
-                            return false;
-                        }
-
-                        //비밀번호 동일한지 체크
-                        if($('#NewPass').val() == $('#PassC').val()){
-                        
-                        
-                        }
-
-                        if($('#NewPass').val() !== $('#PassC').val()){
-                            $('#youPassCComment').text('비밀번호가 동일하지않습니다!');
-                            return false;
-                        }
-
-                        window.onload = function(){
-                            document.querySelector('.login_Box button').addEventListener('click', () => {
-                                    location.href = '../main/main.php';
-                                });
-                        }
-                        }
-                </script>";
-                $userID = $_POST['youId'];
-                $userEmail = $_POST['youEmail'];
-                $regTime = time();
-                $userID = $connect -> real_escape_string(trim($userID));
-                $userName = $connect -> real_escape_string(trim($userName));
-                $userEmail = $connect -> real_escape_string(trim($userEmail));
-                $userPass = $connect -> real_escape_string(trim($userPass));
-                $userPass = sha1("web".$userPass);
-                // 회원가입
-                $sql = "INSERT INTO userMember(userID, userName, userEmail, userPass, regTime) VALUES('$userID', '$userName', '$userEmail', '$userPass', '$regTime' )";
-                // echo $sql;
-                $result = $connect -> query($sql);
-            ?>
+                             function post_to_url(path, params, method) {
+                                method = method || 'post'; 
+                                const form = document.createElement('form');
+                                form.setAttribute('method', method);
+                                form.setAttribute('action', path);
+                                for(let key in params) {
+                                    let hiddenField = document.createElement('input');
+                                    hiddenField.setAttribute('type', 'hidden');
+                                    hiddenField.setAttribute('name', key);
+                                    hiddenField.setAttribute('value', params[key]);
+                                    form.appendChild(hiddenField);
+                                }
+                                document.body.appendChild(form);
+                                form.submit();
+                            }
+                        </script>";
+            ?> 
     </body>
 </html>

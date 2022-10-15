@@ -28,7 +28,7 @@ include "../connect/session.php";
                                     <li class="active"><a href="#c">Bookmark</a></li>
                                     <li><a href="#c">Category</a></li>
                                     <li><a href="#c">Wallpaper</a></li>
-                                    <li><a href="#c">Notice</a></li>
+                                    <li><a href="../board/noticeBoard.php">Notice</a></li>
                                     <li><a href="#c">Feedback</a></li>
                                 </ul>
                             </nav>

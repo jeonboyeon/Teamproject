@@ -36,7 +36,7 @@ include "../connect/session.php";
                                 </div>
                                 <div class="banner__bg">
                                     <figure>
-                                        <img src="/assets/image/banner_bg01.png" alt="배너 이미지" />
+                                        <img src="../assets/image/banner_bg01.png" alt="배너 이미지" />
                                     </figure>
                                 </div>
                             </div>

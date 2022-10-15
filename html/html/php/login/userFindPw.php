@@ -25,25 +25,24 @@ if( isset($_SESSION['userMemberID']) ){
                 <div class="login__wrap">
                     <div class="login__inner">
                         <div class="login__box container">
-                            <form action="userFindPwsave.php" name="join" method="post">
+                            <form method="post">
                                     <h2>IT.<em>D</em></h2>
                                     <span>Find Password 🔍</span>
                                     <legend class="blind">비밀번호 찾기 폼</legend>
                                     <p class="login__desc">회원가입 시 입력한 이메일과 아이디를 통해 비밀번호를 찾아보세요. 임시 비밀번호를 이메일로 보내드립니다!</p>
                                     <div class="login__id">
-                                    <label for="youID">ID</label>
                                         <p class="input__title">ID</p>
-                                        <p id="youIdComment"></p>
+                                        <label for="youID">ID</label>
                                         <input type="id" name="youID" id="youID" placeholder="아이디를 입력해주세요." class="input__style1"  />
+                                        <p id="youIdComment"></p>
                                     </div>
                                     <div>
-                                    <label for="youEmail">이메일</label>
                                         <p class="input__title">E-MAIL</p>
-                                        <p id="youEmailComment"></p>
+                                        <label for="youEmail">이메일</label>
                                         <input type="text" name="youEmail" id="youEmail" placeholder="이메일을 입력해주세요." class="input__style2"  />
-                           
+                                        <p id="youEmailComment"></p>
                                     </div>
-                                    <p id="Comment"></p>
+                                        <p id="Comment"></p>
                                     <a href="userFindId.php">아이디 찾기</a>
                                     <button type="submit" class="input__button">비밀번호 변경하기</button>
                                     <button type="button" class="join__button">이전 페이지로 돌아가기</button>
@@ -64,11 +63,11 @@ if( isset($_SESSION['userMemberID']) ){
                 });
 
                 function findChecks(){
-                    // //아이디 공백 검사
-                    // if($("#youID").val() == ""){
-                    //     $("#youIdComment").text("ID을 입력해주세요!");
-                    //     return false;
-                    // }
+                    //아이디 공백 검사
+                    if($("#youID").val() == ""){
+                        $("#youIdComment").text("ID을 입력해주세요!");
+                        return false;
+                    }
                     //아이디 유효성 검사
                     let getyouId = RegExp(/^[a-zA-Z0-9]+/);
                     if(!getyouId.test($("#youID").val())){
@@ -76,11 +75,11 @@ if( isset($_SESSION['userMemberID']) ){
                           $("#youID").val('');
                     }
 
-                    // //이메일 공백 검사
-                    // if($("#youEmail").val() == ""){
-                    //     $("#youEmailComment").text("이메일을 입력해주세요!");
-                    //     return false;
-                    // }
+                    //이메일 공백 검사
+                    if($("#youEmail").val() == ""){
+                        $("#youEmailComment").text("이메일을 입력해주세요!");
+                        return false;
+                    }
 
                     //이메일 유효성 검사
                     let getYouEmail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
@@ -94,26 +93,26 @@ if( isset($_SESSION['userMemberID']) ){
 
                     let youEmail = $("#youEmail").val();
                     let youId = $("#youID").val();
-                    if(youEmail == null || youEmail == ''){
-                        $("#youEmailComment").text("이메일을 입력해주세요!!");
+                    if(youId == null || youId == ''){
+                        $("#youIdComment").text("아이디를 입력해주세요!!");
                         return false;
-                    } else if(youId == null || youId == ''){
-                        $("#youIdComment").text("아이디 입력해주세요!!");
+                    } else if(youEmail == null || youEmail == ''){
+                        $("#youEmailComment").text("이메일을 입력해주세요!!");
                         return false;
                     } else {
                         $.ajax({
                             type : "POST",
                             url : "userCheck.php",
-                            data : {"userEmail": youEmail, "userId": youId, "type": "emailCheck"},
+                            data : {"userEmail": youEmail, "userId": youId, "type": "Check"},
                             dataType : "json",
                             success : function(data){
                                 if(data.result == "good"){
                                     post_to_url('userFindPwSave.php', {'youEmail': youEmail, 'youId': youId});
                                     return true;
-                                } else {
+                                } else if (data.result == "bad") {
                                     $("#Comment").text("이메일 과 아이디가 일치하지 않습니다.");
                                     return false;
-                                }
+                                } 
                             },
                             error : function(request, status, error){
                                 console.log("request" + request);

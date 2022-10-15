@@ -40,7 +40,7 @@ if( isset($_SESSION['userMemberID']) ){
                                             <a href="userFindPw.php">비빌번호 찾기</a>
                                         </div>
                                         <button type="submit" class="input__button">아이디 찾기</button>
-                                        <button type="button" class="join__button">이전 페이지로 돌아가기</button>  
+                                        <button type="button" class="join__button">이전 페이지로 돌아가기</button>
                                     </fieldset>
                                 </form>
                             </div>
