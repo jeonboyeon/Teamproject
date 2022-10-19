@@ -3,7 +3,7 @@ body {
 }
 /* board */
 .board_wrap {
-    height: 1080px;
+    /* height: 1080px; */
 }
 .board_wrap .board_inner {
     padding: 200px 0;
@@ -31,7 +31,7 @@ body {
     font-size: 30px;
     color: #555;
     display: inline-block;
-    background: #f5f5f5;
+    background: #f9f9f9;
     padding: 0 10px;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 .board_wrap .board_inner .board_box h2::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -30px;
     left: 50%;
@@ -81,7 +81,7 @@ body {
     height: 40px;
     background-color: #fff;
     border: 1px solid #dcdcdc;
-    font-family: 'GmarketSans';
+    font-family: "GmarketSans";
 }
 .board_search fieldset input {
     color: #777;
@@ -90,7 +90,7 @@ body {
     width: 250px;
     height: 40px;
     border: 1px solid #dcdcdc;
-    font-family: 'GmarketSans';
+    font-family: "GmarketSans";
 }
 .board_search fieldset .searchBtn {
     font-size: 16px;
@@ -100,7 +100,7 @@ body {
     border-radius: 5px;
     background: linear-gradient(106.07deg, #388fc0 -20.17%, #195eb1 127.19%);
     cursor: pointer;
-    font-family: 'GmarketSans';
+    font-family: "GmarketSans";
 }
 
 .board_search fieldset .searchBtn_Res {
@@ -123,6 +123,9 @@ body {
 }
 .lf a {
     color: #555;
+}
+.lf .comment {
+    color: #999;
 }
 .board_box .board_table {
     margin-bottom: 10px;
@@ -288,7 +291,7 @@ body {
     border-radius: 4px;
     font-size: 16px;
     font-weight: 500;
-    font-family: 'GmarketSans';
+    font-family: "GmarketSans";
 }
 .board__write textarea {
     width: 100%;
@@ -304,7 +307,7 @@ body {
     border-radius: 4px;
     font-size: 16px;
     font-weight: 500;
-    font-family: 'GmarketSans';
+    font-family: "GmarketSans";
 }
 
 .board__write .btn_group {

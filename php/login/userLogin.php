@@ -38,23 +38,26 @@ if( isset($_SESSION['userMemberID']) ){
                                 <legend class="blind">로그인 입력 폼</legend>
                                 <div>
                                     <p class="input__title">ID</p>
+                                    <p id="youIdComment"></p>
+                                    <p class="erro"></p>
                                     <label for="youId">ID</label>
                                     <input type="text" name="youId" id="youId" placeholder="아이디를 입력해주세요."
                                         class="input__style1">
-                                    <p id="youIdComment"></p>
+                             
                                 </div>
                                 <div>
                                     <p class="input__title">PASSWORD</p>
+                                    <p id="youPassComment"></p>
                                     <label for="youPass">비밀번호</label>
                                     <input type="password" name="youPass" id="youPass" placeholder="비밀번호를 입력해주세요."
                                         class="input__style2">
-                                        <p id="youPassComment"></p>
+                                    
                                 </div>
                                 <div class="lost">
                                     <a href="userFindPw.php" class="input__lost">비밀번호 찾기</a>
                                     <a href="userFindId.php" class="input__lost">아이디 찾기</a>
                                 </div>
-                                <p class="erro"></p>
+                                <!-- <p class="erro"></p> -->
                                 <button type="submit" class="input__button">로그인</button>
                                 <button type="button" class="join__button">회원가입</button>
                             </fieldset>

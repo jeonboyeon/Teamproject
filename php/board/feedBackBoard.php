@@ -70,21 +70,35 @@ include "../connect/session.php";
                                             $viewLimit = ($viewNum * $page) - $viewNum;
                                             // echo $_GET['page'];
 
+
                                             $sql = "SELECT b.feedBackBoardID, b.boardTitle, m.userNickName, b.regTime, b.boardView FROM feedBackBoard b JOIN userMember m ON(b.userMemberID = m.userMemberID) ORDER BY feedBackBoardID DESC LIMIT {$viewLimit}, {$viewNum};";
-                                            
                                             $result = $connect -> query($sql);
+                                           
+                                          
+
                                             if($result) {
                                                 $count = $result -> num_rows;
                                                 if($count > 0) {
                                                     for($i=0; $i < $count; $i++){
                                                         $info = $result -> fetch_array(MYSQLI_ASSOC);
+                                                        
+                                                        $sql2 = "SELECT b.commentId FROM userMember a JOIN feedBackComment b ON (a.userMemberID = b.userMemberID) WHERE feedBackBoardID = ".$info['feedBackBoardID']." ORDER BY commentId DESC";
+                                                        // echo "<script>alert('".$sql2."')</script>";
+                                                        $result2 = $connect->query($sql2);
+                                                        $commentCount2 = $result2 -> num_rows;
                                                         // echo "<script>alert('".$info['userNickName']."')</script>";
                                                         // echo $i;
                                                         echo "<tr>";
                                                             echo "<td class='ce'>".$info['feedBackBoardID']."</td>";
-                                                            echo "<td class='lf'><a href='feedBackBoardView.php?feedBackBoardID={$info['feedBackBoardID']}'>".$info['boardTitle']."
+                                                            if($commentCount2 > 0){
+                                                            echo "<td class='lf'><a href='feedBackBoardView.php?feedBackBoardID={$info['feedBackBoardID']}'>".$info['boardTitle']."<span class='comment'> (".$commentCount2.") </span>
                                                             <p class='resinfo'>".$info['userNickName']. "|<span>".date('Y-m-d', $info['regTime'])." </span><em>| 조회수 : ".$info['boardView']."</em></p>
                                                             </td>";
+                                                            } else {
+                                                                echo "<td class='lf'><a href='feedBackBoardView.php?feedBackBoardID={$info['feedBackBoardID']}'>".$info['boardTitle']."<span class='comment'></span>
+                                                                <p class='resinfo'>".$info['userNickName']. "|<span>".date('Y-m-d', $info['regTime'])." </span><em>| 조회수 : ".$info['boardView']."</em></p>
+                                                                </td>";
+                                                            }
                                                             echo "<td class='ce Nickname'>".$info['userNickName']."</td>";
                                                             echo "<td class='ce Date'>".date('Y-m-d', $info['regTime'])."</td>";
                                                             echo "<td class='ce Views'>".$info['boardView']."</td>";

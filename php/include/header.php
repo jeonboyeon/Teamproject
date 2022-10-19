@@ -117,14 +117,16 @@ include "../connect/session.php";
 
             const profileBox = document.querySelector('.profile'); // 프로필 박스
             const profileImg = document.querySelector('.profile__img'); // 프로필 이미지
-            const profileNav = profileBox.querySelector('.profile__nav'); // 프로필 박스 네이게이션
-            // console.log(profileNav); 프로필 박스, 프로필 이미지, 프로필 박스 네비게이션 모두 확인 완료
-
-            profileBox.addEventListener('mouseenter', () => {
+            if( document.querySelector('.profile')){
+                const profileNav = profileBox.querySelector('.profile__nav'); // 프로필 박스 네이게이션
+                // console.log(profileNav); 프로필 박스, 프로필 이미지, 프로필 박스 네비게이션 모두 확인 완료
+                profileBox.addEventListener('mouseenter', () => {
                 profileNav.style.display = 'inline-block';
-            });
-            profileNav.addEventListener('mouseleave', () => {
-                profileNav.style.display = 'none';
-            });
-            // header script
+                });
+                profileNav.addEventListener('mouseleave', () => {
+                    profileNav.style.display = 'none';
+                });
+                // header script
+            }
+           
         </script>

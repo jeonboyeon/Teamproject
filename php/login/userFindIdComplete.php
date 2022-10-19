@@ -60,8 +60,7 @@ include "../connect/connect.php";
                                     많은 방문 부탁드립니다. <br />
                                     다시 한 번 회원가입을 축하드립니다!
                                 </span>
-                                <button type='button'>메인으로 이동하기</button>
-                            </div>";
+                                <button type='button'>메인으로 이동하기</button>";
                             } else {
                                 echo " <div class='login_Box'>
                                 <figure>
@@ -76,8 +75,7 @@ include "../connect/connect.php";
                                     많은 방문 부탁드립니다. <br />
                                     다시 한 번 회원가입을 축하드립니다!
                                 </span>
-                                <button type='button'>메인으로 이동하기</button>
-                            </div>";
+                                <button type='button'>메인으로 이동하기</button>";
                             }
                                 
                            

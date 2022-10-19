@@ -41,27 +41,18 @@ if($prevPage != '/php/login/userFindPwSave.php'){
                                $result = $connect -> query($sql);
 
                             if($result){
-                                echo " <div class='login_Box'>
-                                <figure>
-                                    <img src='/assets/image/Congratulations_bg.png' alt='회원가입 축하 이미지' />
+                                echo "<figure>
+                                    <img src='/assets/image/passwordChange_bg.png' alt='회원가입 축하 이미지' />
                                 </figure>
-                                <p>비밀번호 변경이 되었습니다!</p>
+                                <p>Password change complete</p>
                                 <span>
-                                    아이디 $userID 님의 비빌번호를 변경했습니다. <br />
-                                    저희 IT.D 사이트는 <br />
-                                    다양한 이미지 다운로드 기능을 무료로 제공해드리고 있습니다. <br />
-                                    외에도 앞으로 다양한 기능이 추가되고 이벤트도 있으니 <br />
-                                    많은 방문 부탁드립니다. <br />
-                                    다시 한 번 회원가입을 축하드립니다!
-                                </span>
-                                <button type='button'>메인으로 이동하기</button>
-                            </div>";
+                                    아이디 $userID 님의 비밀번호 변경이 완료 되었습니다!. <br />
+                                </span>";
                             } else {
-                                echo " <div class='login_Box'>
-                                <figure>
+                                echo "<figure>
                                     <img src='/assets/image/Congratulations_bg.png' alt='회원가입 축하 이미지' />
                                 </figure>
-                                <p>비밀번호 변경 실패</p>
+                                <p>Password change error</p>
                                 <span>
                                     에러발생 -- 관리자에게 문의하세요! <br />
                                     저희 IT.D 사이트는 <br />
@@ -69,9 +60,7 @@ if($prevPage != '/php/login/userFindPwSave.php'){
                                     외에도 앞으로 다양한 기능이 추가되고 이벤트도 있으니 <br />
                                     많은 방문 부탁드립니다. <br />
                                     다시 한 번 회원가입을 축하드립니다!
-                                </span>
-                                <button type='button'>메인으로 이동하기</button>
-                            </div>";
+                                </span>";
                             }
                                 
                            
@@ -91,6 +80,7 @@ if($prevPage != '/php/login/userFindPwSave.php'){
                             </span>
                             <button type="button">메인으로 이동하기</button>
                         </div> -->
+                        <button type='button'>메인으로 이동하기</button>
                     </div>
                 </section>
             </div>
@@ -99,7 +89,7 @@ if($prevPage != '/php/login/userFindPwSave.php'){
         <?php include "../include/footer.php" ?>
         <!-- footer -->
         <script>
-            document.querySelector(".login_Box button").addEventListener("click", () => {
+            document.querySelector(".login__Box button").addEventListener("click", () => {
             location.href = "../main/main.php";
         });
         </script>

@@ -65,11 +65,16 @@ input::placeholder {
     width: 100%;
 }
 .login__box > form > fieldset > div > p {
+    float: left;
+    display: inline-block;
     color: #777;
     text-align: left;
     font-size: 13px;
     margin-right: 10px;
     margin-bottom: 5px;
+}
+.login__box > form > fieldset > div > p + p {
+    color: red;
 }
 .login__box > form > fieldset > div > div {
     display: flex;
